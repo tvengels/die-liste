@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    section {
+        max-width: 640px;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid gray;
+        box-sizing: border-box;
+        padding: 8px;
+        label {
+            display: block;
+        }
+    }
+}
