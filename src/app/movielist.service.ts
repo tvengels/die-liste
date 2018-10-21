@@ -17,7 +17,7 @@ export class MovielistService {
   }
 
   public add(movie: Movie): void {
-    this._movies.push(movie);
+    this._movies = [...this._movies, movie];
   }
 
 }
