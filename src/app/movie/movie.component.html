@@ -3,8 +3,8 @@
     <p>{{movie.description}}</p>
     <dl>
         <dt>year:</dt>
-        <dd>{{movie.yearofRelease}}</dd>
+        <dd>{{movie.yearOfRelease | date }}</dd>
         <dt>rating:</dt>
-        <dd>{{movie.rating}}</dd>
+        <dd>{{movie.rating | starRating}}</dd>
     </dl>
 </section>

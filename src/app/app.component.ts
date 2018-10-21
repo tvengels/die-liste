@@ -9,9 +9,9 @@ import { Movie } from './movie';
 export class AppComponent {
 
   movies: Movie[] = [
-    new Movie('Star Wars', '...', new Date(1977), 4.7 ),
-    new Movie('Empire strikes back', '...', new Date(1980), 4.7 ),
-    new Movie('Return of the Jedi', '...', new Date(1983), 4.7 )
+    new Movie('Star Wars', '...', new Date('1977-05-25'), 3.9 ),
+    new Movie('Empire strikes back', '...', new Date('1980-05-21'), 1.2 ),
+    new Movie('Return of the Jedi', '...', new Date('1983-05-25'), 3.0 )
   ];
 
   movieForm: {
