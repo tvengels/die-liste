@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Movie } from './movie';
+import { MovielistService } from './movielist.service';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,6 @@ import { Movie } from './movie';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  movies: Movie[] = [
-    new Movie('Star Wars', '...', new Date(1977), 4.7 ),
-    new Movie('Empire strikes back', '...', new Date(1980), 4.7 ),
-    new Movie('Return of the Jedi', '...', new Date(1983), 4.7 )
-  ];
 
   movieForm: {
     title: string;
@@ -26,10 +21,16 @@ export class AppComponent {
     rating: 0
   };
 
+  public constructor(private movieslistService: MovielistService) {
+    this.movieslistService.add(new Movie('Star Wars', '...', new Date(1977), 4.7 ));
+    this.movieslistService.add(new Movie('Empire strikes back', '...', new Date(1980), 4.2 ));
+    this.movieslistService.add(new Movie('Return of the Jedi', '...', new Date(1983), 4.9 ));
+  }
+
   public addMovie(event: Event): void {
     event.stopPropagation();
     event.preventDefault();
-    this.movies.push(new Movie(
+    this.movieslistService.add(new Movie(
       this.movieForm.title,
       this.movieForm.desc,
       new Date(this.movieForm.year),
